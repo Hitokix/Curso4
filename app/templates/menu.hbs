@@ -1,14 +1,18 @@
 <ul id="sideBar" class="side-nav fixed">
     <li>
-        <div class="userView">
-            <div class="block"></div>
+        <div class="userView grey darken-2">
+            <a href="#!user">
+                <div class="circle grey lighten-2">
+                    
+                </div>
+                <span class="white-text email">user@example.com<i class="material-icons">arrow_drop_down</i></span>
+            </a>
+            <p></p>
         </div>
     </li>
+    {{#each menuItems}}
     <li>
-        <div class="divider">
-        </div>
+        <a href="#" id="{{state}}Link" class="menuLink" onclick="changePageState('{{state}}')">{{Item}}</a>
     </li>
-    <li>
-        <a href="#">Item</a>
-    </li>
+    {{/each}}
 </ul>

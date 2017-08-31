@@ -1,6 +1,7 @@
 // bower:scss
 // endbower
 @import 'block';
+@import 'menu';
 .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
@@ -27,5 +28,24 @@ body {
         font-size: 60px;
         line-height: 1;
         letter-spacing: -1px;
+    }
+}
+
+.pageTitle {
+    padding-left: 20px;
+    font-size: 1.5em;
+}
+
+.mainContent {
+    padding-left: 300px;
+}
+
+.foot-copyright {
+    font-size: 0.8em;
+    height: 35px;
+    padding-left: 10px;
+    margin-bottom: 0px !important;
+    .foot-version {
+        padding-left: 50px;
     }
 }

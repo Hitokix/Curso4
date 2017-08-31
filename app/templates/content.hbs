@@ -1,0 +1,25 @@
+<nav class="top-nav grey darken-2 mainContent">
+    <div class="pageTitle">{{title}}</div>
+</nav>
+<div class="row mainContent">
+    <div class="col s12">
+        {{#switch state}} 
+            {{#case 'newExpense'}}
+            <div id="{{state}}">
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+            {{/case}} {{#case 'expenseMove'}}
+            <div id="{{state}}">
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+            {{/case}} {{#case 'expenseForcast'}}
+            <div id="{{state}}">
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+            {{/case}} 
+        {{/switch}}
+    </div>
+</div>

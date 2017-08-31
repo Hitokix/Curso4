@@ -8,18 +8,29 @@ cardsImage.forEach(function(card, index) {
     card.innerHTML = html;
 }, this);
 */
-var menu = document.querySelector('#menu');
-menu.innerHTML = ExpApp.menu();
+Handlebars.registerHelper('switch', function(value, option) {
+    this._switch_value_ = value;
+    var html = option.fn(this);
+    delete this._switch_value_;
+    return html;
+});
 
-var block = document.querySelectorAll('.block');
-var blocksName = [
+Handlebars.registerHelper('case', function(value, option) {
+    if (value == this._switch_value_) {
+        return option.fn(this);
+    }
+});
+
+var mainblock = document.querySelectorAll('.block');
+var mainblocksName = [
     { blockName: 'Usuario', blockHeight: '100px;' },
-    { blockName: 'Registrar Nuevos Gastos', blockHeight: '150px;' },
-    { blockName: 'Lista de Movimimentos', blockHeight: '400px;' },
     { blockName: 'Pie de Pagina', blockHeight: '70px;' }
 ]
 
-block.forEach(function(blocks, index) {
-    var context = blocksName[index];
-    blocks.innerHTML = ExpApp.blocks(context);
+mainblock.forEach(function(mainBlocks, index) {
+    var mainContext = mainblocksName[index];
+    mainBlocks.innerHTML = ExpApp.blocks(mainContext);
 }, this);
+
+
+changePageState('newExpense');
