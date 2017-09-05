@@ -2,6 +2,29 @@
 // endbower
 @import 'block';
 @import 'menu';
+@import 'datepicker';
+.card-panel {
+    padding: 12px !important;
+    h4,
+    h5 {
+        text-align: right;
+    }
+}
+
+.inputSlider {
+    height: auto !important;
+    font-size: 1.5em !important;
+}
+
+.filterSlider {
+    .noUi-origin,
+    .noUi-handle,
+    .noUi-connect,
+    .noUi-tooltip {
+        background-color: grey !important;
+    }
+}
+
 .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
