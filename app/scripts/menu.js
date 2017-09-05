@@ -7,4 +7,3 @@ var menuItems = [
 ];
 var menuContext = { menuItems };
 menu.innerHTML = ExpApp.menu(menuContext);
-]

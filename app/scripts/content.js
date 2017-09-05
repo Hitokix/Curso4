@@ -13,6 +13,17 @@ var blocksName = {
     ]
 };
 
+$(document).ready(function() {
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+    });
+});
+
 var upContent = document.querySelector('#upContent');
 
 function getStateTitle(state) {
@@ -27,10 +38,8 @@ function changePageState(state) {
     var upContext = { 'state': state, 'title': getStateTitle(state) };
     upContent.innerHTML = ExpApp.content(upContext);
 
-    var block = document.querySelectorAll('#' + state + ' .block');
-    block.forEach(function(blocks, index) {
-        blocks.innerHTML = ExpApp.blocks(blocksName[state][index]);
-    }, this);
+    var statePage = document.querySelector('#' + state);
+    statePage.innerHTML = ExpApp[state]();
 
     $('.menuLink').removeClass('menuActive');
     $('#' + state + 'Link').addClass('menuActive');
