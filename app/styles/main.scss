@@ -13,7 +13,7 @@
 
 .inputSlider {
     height: auto !important;
-    font-size: 1.5em !important;
+    font-size: 1.1em !important;
 }
 
 .filterSlider {
@@ -36,6 +36,9 @@ body {
     background: #fafafa;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #333;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .hero-unit {
@@ -57,18 +60,32 @@ body {
 .pageTitle {
     padding-left: 20px;
     font-size: 1.5em;
+    @media screen and (max-width: 330px) {
+        font-size: 1.2em;
+    }
 }
 
 .mainContent {
     padding-left: 300px;
+    @media screen and (max-width: 992px) {
+        padding-left: 0px;
+    }
 }
 
 .foot-copyright {
     font-size: 0.8em;
-    height: 35px;
+    min-height: 40px !important;
+    height: auto !important;
     padding-left: 10px;
     margin-bottom: 0px !important;
     .foot-version {
         padding-left: 50px;
+        @media screen and (max-width: 600px) {
+            padding-left: 10px;
+        }
     }
+}
+
+main {
+    flex: 1 0 auto;
 }

@@ -20,7 +20,8 @@ function getStateTitle(state) {
         if (menuItems[i].state === state) {
             return menuItems[i].Item;
         }
-    }
+    };
+
 }
 
 function levelChangeTable() {
@@ -51,8 +52,8 @@ function levelChangeTable() {
     }
 };
 
-
 function changePageState(state) {
+
     var upContext = { 'state': state, 'title': getStateTitle(state) };
     upContent.innerHTML = ExpApp.content(upContext);
 
@@ -100,9 +101,9 @@ function changePageState(state) {
             start: [1, 3],
             connect: true,
             tooltips: true,
-            step: 1,
+            step: 3,
             format: wNumb({
-                decimals: 1,
+                decimals: 0,
             }),
             range: { 'min': [1], 'max': [12] }
 
@@ -124,5 +125,5 @@ function changePageState(state) {
             { 'Tipo': 'Otros', 'Monto': 'USD 500.00', 'Budget': '400.00', 'ForeCast': '600.00' }
         ];
         tableForeCast.innerHTML = ExpApp.tableForeCast({ account: tableFor });
-    }
+    };
 };

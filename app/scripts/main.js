@@ -21,6 +21,7 @@ Handlebars.registerHelper('case', function(value, option) {
     }
 });
 
+/*
 var mainblock = document.querySelectorAll('.block');
 var mainblocksName = [
     { blockName: 'Usuario', blockHeight: '100px;' },
@@ -31,6 +32,9 @@ mainblock.forEach(function(mainBlocks, index) {
     var mainContext = mainblocksName[index];
     mainBlocks.innerHTML = ExpApp.blocks(mainContext);
 }, this);
-
+*/
 
 changePageState('newExpense');
+
+// Initialize collapse button
+$('.button-collapse').sideNav();
